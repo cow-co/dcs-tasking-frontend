@@ -3,14 +3,14 @@
 </template>
 
 <script>
-import QueuePage from './components/pages/QueuePage.vue'
+import QueuePage from "./components/pages/QueuePage.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    QueuePage
-  }
-}
+    QueuePage,
+  },
+};
 </script>
 
 <style>

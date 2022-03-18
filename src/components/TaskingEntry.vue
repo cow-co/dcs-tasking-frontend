@@ -1,11 +1,12 @@
 <template>
   <li class="tasking-entry">
-    Tasking
+    <p>{{ server }}</p>
   </li>
 </template>
 
 <script>
 export default {
-  name: "TaskingEntry"
-}
+  name: "TaskingEntry",
+  props: ["summary", "location", "server"],
+};
 </script>
