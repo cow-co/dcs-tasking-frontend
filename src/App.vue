@@ -15,7 +15,7 @@ export default {
 
 <style>
 body {
-  background-color: #1f1f1f;
+  background-color: #2d2d2d;
   color: #fff;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -28,6 +28,9 @@ body {
   padding: 5px;
   border: rgb(46, 117, 55);
   border-radius: 2px;
+  min-height: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .progress-button:hover {
