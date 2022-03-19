@@ -8,6 +8,7 @@
         :summary="tasking.summary"
         :location="tasking.location"
         :server="tasking.server"
+        :type="tasking.type"
       />
     </ul>
     <button class="progress-button" v-on:click="this.openCreateWindow()">
@@ -35,12 +36,14 @@ export default {
           summary: "Task 1",
           location: "Gudauta",
           server: "4YA",
+          type: "SEAD",
         },
         {
           id: 2,
           summary: "Task 2",
           location: "MinVody",
           server: "4YA",
+          type: "CAP",
         },
       ],
     };
