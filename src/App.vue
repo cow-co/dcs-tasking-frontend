@@ -26,7 +26,7 @@ body {
   background-color: rgb(46, 117, 46);
   color: #fff;
   padding: 5px;
-  border: rgb(46, 117, 55);
+  border: #2e7537;
   border-radius: 2px;
   min-height: 50px;
   padding-left: 10px;

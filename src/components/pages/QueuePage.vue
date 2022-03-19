@@ -11,9 +11,7 @@
         :type="tasking.type"
       />
     </ul>
-    <button class="progress-button" v-on:click="this.openCreateWindow()">
-      Create Tasking
-    </button>
+    <ui-fab extended icon="add_task">Create Tasking</ui-fab>
   </div>
 </template>
 

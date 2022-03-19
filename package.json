@@ -9,6 +9,7 @@
     "test": "echo 'no tests!' && exit 0"
   },
   "dependencies": {
+    "balm-ui": "^10.2.0",
     "core-js": "^3.6.5",
     "vue": "^3.0.0"
   },
