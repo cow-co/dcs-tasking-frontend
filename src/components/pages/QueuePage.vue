@@ -11,21 +11,17 @@
         :type="tasking.type"
       />
     </ul>
-    <ui-fab extended icon="add_task">Create Tasking</ui-fab>
+    <create-tasking></create-tasking>
   </div>
 </template>
 
 <script>
 import TaskingEntry from "../TaskingEntry.vue";
+import CreateTasking from "../CreateTasking.vue";
 
 export default {
-  components: { TaskingEntry },
+  components: { TaskingEntry, CreateTasking },
   name: "QueuePage",
-  methods: {
-    openCreateWindow() {
-      console.log("Create Tasking");
-    },
-  },
   data() {
     return {
       taskings: [

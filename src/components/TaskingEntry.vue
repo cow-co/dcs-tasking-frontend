@@ -1,6 +1,7 @@
 <template>
-  <div class="tasking-entry">
+  <ui-card class="tasking-entry">
     <h3>{{ type }}: {{ summary }}</h3>
+    <ui-list-divider></ui-list-divider>
     <div class="cells">
       <div class="info-cell">
         <p><b>Server:</b> {{ server }}</p>
@@ -16,7 +17,7 @@
         </ul>
       </div>
     </div>
-  </div>
+  </ui-card>
 </template>
 
 <script>
@@ -38,13 +39,9 @@ export default {
 
 <style scoped>
 .tasking-entry {
-  background-color: #707070;
   width: 50%;
   margin-left: 25%;
   margin-bottom: 20px;
-  min-height: 65px;
-  max-height: 150px;
-  border-radius: 5px;
   padding: 10px 5px;
 }
 
