@@ -1,5 +1,7 @@
 <template>
-  <queue-page />
+  <div class="container">
+    <queue-page />
+  </div>
 </template>
 
 <script>
@@ -22,8 +24,7 @@ body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #424242;
-  color: white;
+  background-color: #b3e5fc;
 }
 
 .progress-button {

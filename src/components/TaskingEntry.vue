@@ -1,5 +1,5 @@
 <template>
-  <div class="tasking-entry">
+  <div class="card light-blue lighten-3 col s12">
     <h3>{{ type }}: {{ summary }}</h3>
     <div class="cells">
       <div class="info-cell">
@@ -42,9 +42,8 @@ export default {
   margin-left: 25%;
   margin-bottom: 20px;
   padding: 10px 5px;
-  background-color: #707070;
+  background-color: #light-blue lighten-3;
   border-radius: 10px;
-  color: white;
   box-shadow: black;
 }
 

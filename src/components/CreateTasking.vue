@@ -1,54 +1,54 @@
 <template>
-  <a class="btn modal-trigger" href="#create-form">Create Tasking</a>
-  <div id="create-form" class="modal grey">
-    <div class="modal-content s8">
-      <div class="row s8">
-        <h5>Create a New Task</h5>
+  <a class="btn modal-trigger light-blue lighten-2" href="#create-form"
+    >Create Tasking</a
+  >
+  <div id="create-form" class="light-blue lighten-3 modal">
+    <div class="modal-content light-blue lighten-3 black-text">
+      <div class="container">
         <form>
-          <div class="row s8">
+          <div class="row">
+            <label for="summary" class="black-text">Summary</label>
             <input
               type="text"
               name="summary"
-              placeholder="Summary"
               id="summary"
               v-model="task.summary"
             />
           </div>
-          <div class="row s8">
-            <select name="tasktype" class="grey" id="tasktype">
-              <option value="" disabled selected class="grey">Task Type</option>
-              <option value="CAP" class="grey">CAP</option>
-              <option value="SEAD" class="grey">SEAD</option>
-              <option value="CAS" class="grey">CAS</option>
+          <div class="row">
+            <select name="tasktype" id="tasktype">
+              <option value="" disabled selected>Task Type</option>
+              <option value="CAP">CAP</option>
+              <option value="SEAD">SEAD</option>
+              <option value="CAS">CAS</option>
             </select>
           </div>
-          <div class="row s8">
+          <div class="row">
+            <label for="server" class="black-text">Server</label>
             <input
               type="text"
               name="server"
-              placeholder="Server"
               id="server"
               v-model="task.server"
             />
           </div>
-          <div class="row s8">
-            <div class="col s4">
+          <div class="row s12">
+            <div class="col s6">
+              <label for="location" class="black-text">Location</label>
               <input
                 type="text"
                 name="location"
-                placeholder="Location"
                 id="location"
-                v-model="task.server"
+                v-model="task.location"
               />
             </div>
-            <div class="col s4 grey">
-              <select name="loctype" class="grey" id="loctype">
-                <option value="" disabled selected class="grey">
-                  Location Type
-                </option>
-                <option value="LatLong" class="grey">LatLong</option>
-                <option value="Description" class="grey">Description</option>
-                <option value="MGRS" class="grey">MGRS</option>
+            <div class="col s6">
+              <label for="loctype" class="black-text">Location Type</label>
+              <select name="loctype" id="loctype">
+                <option value="" disabled selected>Location Type</option>
+                <option value="LatLong">LatLong</option>
+                <option value="Description">Description</option>
+                <option value="MGRS">MGRS</option>
               </select>
             </div>
           </div>

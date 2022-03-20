@@ -1,17 +1,19 @@
 <template>
-  <div class="queue">
-    <h1>Current Tasks</h1>
-    <ul class="queue-list">
-      <tasking-entry
-        v-for="tasking in taskings"
-        :key="tasking.id"
-        :summary="tasking.summary"
-        :location="tasking.location"
-        :server="tasking.server"
-        :type="tasking.type"
-      />
-    </ul>
-    <create-tasking></create-tasking>
+  <div class="row">
+    <div class="queue">
+      <h1>Current Tasks</h1>
+      <ul class="queue-list">
+        <tasking-entry
+          v-for="tasking in taskings"
+          :key="tasking.id"
+          :summary="tasking.summary"
+          :location="tasking.location"
+          :server="tasking.server"
+          :type="tasking.type"
+        />
+      </ul>
+      <create-tasking></create-tasking>
+    </div>
   </div>
 </template>
 
