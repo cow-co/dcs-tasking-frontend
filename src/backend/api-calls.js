@@ -1,6 +1,6 @@
 async function createTasking(taskingDetails) {
-  console.debug("Creating tasking...");
-  await fetch({method: "PUT", body: JSON.stringify(taskingDetails)}); // TODO Fill this out properly
+  console.debug(`Creating tasking ${taskingDetails}...`);
+  // await fetch({method: "PUT", body: JSON.stringify(taskingDetails)}); // TODO Fill this out properly
 }
 
 export {

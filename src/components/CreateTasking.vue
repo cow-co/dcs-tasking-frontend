@@ -1,29 +1,65 @@
 <template>
-  <ui-fab extended icon="add_task" @click="open = true">Create Tasking</ui-fab>
-  <ui-dialog v-model="open" @confirm="onSubmit" class="create-tasking">
-    <ui-dialog-title>Create a New Task</ui-dialog-title>
-    <ui-dialog-content>
-      <ui-form nowrap item-margin-bottom="16" label-width="80">
-        <ui-form-field>
-          <label class="required">Summary:</label>
-          <ui-textfield></ui-textfield>
-        </ui-form-field>
-        <ui-form-field>
-          <label class="required">Type:</label>
-          <ui-select
-            v-model="task.type"
-            :options="taskTypes"
-            default-label="Type"
-            @change="onChangeType($event)"
-          ></ui-select>
-        </ui-form-field>
-      </ui-form>
-    </ui-dialog-content>
-    <ui-dialog-actions></ui-dialog-actions>
-  </ui-dialog>
+  <a class="btn modal-trigger" href="#create-form">Create Tasking</a>
+  <div id="create-form" class="modal grey">
+    <div class="modal-content s8">
+      <div class="row s8">
+        <h5>Create a New Task</h5>
+        <form>
+          <div class="row s8">
+            <input
+              type="text"
+              name="summary"
+              placeholder="Summary"
+              id="summary"
+              v-model="task.summary"
+            />
+          </div>
+          <div class="row s8">
+            <select name="tasktype" class="grey" id="tasktype">
+              <option value="" disabled selected class="grey">Task Type</option>
+              <option value="CAP" class="grey">CAP</option>
+              <option value="SEAD" class="grey">SEAD</option>
+              <option value="CAS" class="grey">CAS</option>
+            </select>
+          </div>
+          <div class="row s8">
+            <input
+              type="text"
+              name="server"
+              placeholder="Server"
+              id="server"
+              v-model="task.server"
+            />
+          </div>
+          <div class="row s8">
+            <div class="col s4">
+              <input
+                type="text"
+                name="location"
+                placeholder="Location"
+                id="location"
+                v-model="task.server"
+              />
+            </div>
+            <div class="col s4 grey">
+              <select name="loctype" class="grey" id="loctype">
+                <option value="" disabled selected class="grey">
+                  Location Type
+                </option>
+                <option value="LatLong" class="grey">LatLong</option>
+                <option value="Description" class="grey">Description</option>
+                <option value="MGRS" class="grey">MGRS</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
+import { createTasking } from "../backend/api-calls";
 const TASKTYPES = [
   {
     value: 1,
@@ -39,30 +75,52 @@ const TASKTYPES = [
   },
 ];
 
+const LOCATIONTYPES = [
+  {
+    value: 1,
+    label: "description",
+  },
+  {
+    value: 2,
+    label: "latlong",
+  },
+  {
+    value: 3,
+    label: "MGRS",
+  },
+];
+
 export default {
   data() {
     return {
       taskTypes: TASKTYPES,
+      locationTypes: LOCATIONTYPES,
       open: false,
+      locationType: "description",
       task: {
         summary: "",
         type: "CAP",
+        server: "",
       },
     };
   },
   methods: {
     onSubmit() {
       console.log("Sending");
+      createTasking(this.task);
     },
     onChangeType(value) {
       this.task.type = value;
+    },
+    onChangeLocType(value) {
+      this.locationType = value;
     },
   },
 };
 </script>
 
 <style scoped>
-.create-tasking {
-  color: white;
-}
+/* .card {
+  background: #707070;
+} */
 </style>
