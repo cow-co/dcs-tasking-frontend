@@ -1,6 +1,6 @@
 <template>
   <a class="btn modal-trigger light-blue lighten-2" href="#create-form"
-    >Create Tasking</a
+    >Create Task</a
   >
   <div id="create-form" class="light-blue lighten-3 modal">
     <div class="modal-content light-blue lighten-3 black-text">
@@ -52,6 +52,9 @@
               </select>
             </div>
           </div>
+          <a class="btn light-blue lighten-2" href="#" @click="onSubmit"
+            >Create Task</a
+          >
         </form>
       </div>
     </div>
