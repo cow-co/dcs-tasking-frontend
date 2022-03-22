@@ -16,7 +16,7 @@
             />
           </div>
           <div class="row">
-            <select name="tasktype" id="tasktype">
+            <select name="tasktype" id="tasktype" v-model="task.type">
               <option value="" disabled selected>Task Type</option>
               <option value="CAP">CAP</option>
               <option value="SEAD">SEAD</option>
@@ -29,7 +29,7 @@
               type="text"
               name="server"
               id="server"
-              v-model="task.server"
+              v-model="task.serverName"
             />
           </div>
           <div class="row s12">
@@ -44,7 +44,7 @@
             </div>
             <div class="col s6">
               <label for="loctype" class="black-text">Location Type</label>
-              <select name="loctype" id="loctype">
+              <select name="loctype" id="loctype" v-model="locationType">
                 <option value="" disabled selected>Location Type</option>
                 <option value="LatLong">LatLong</option>
                 <option value="Description">Description</option>
@@ -52,7 +52,10 @@
               </select>
             </div>
           </div>
-          <a class="btn light-blue lighten-2" href="#" @click="onSubmit"
+          <a
+            class="btn modal-close light-blue lighten-2"
+            href="#!"
+            @click="onSubmit"
             >Create Task</a
           >
         </form>
@@ -102,15 +105,21 @@ export default {
       locationType: "description",
       task: {
         summary: "",
-        type: "CAP",
-        server: "",
+        type: "",
+        serverName: "",
+        location: "",
       },
     };
   },
   methods: {
     onSubmit() {
       console.log("Sending");
-      createTasking(this.task);
+      let locationToStore = `${this.locationType}¬${this.task.location}`;
+      const taskToSend = {
+        ...this.task,
+        location: locationToStore,
+      };
+      createTasking(taskToSend);
     },
     onChangeType(value) {
       this.task.type = value;
