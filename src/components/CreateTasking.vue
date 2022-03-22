@@ -12,11 +12,12 @@
               type="text"
               name="summary"
               id="summary"
+              required
               v-model="task.summary"
             />
           </div>
           <div class="row">
-            <select name="tasktype" id="tasktype" v-model="task.type">
+            <select name="tasktype" required id="tasktype" v-model="task.type">
               <option value="" disabled selected>Task Type</option>
               <option value="CAP">CAP</option>
               <option value="SEAD">SEAD</option>
@@ -28,6 +29,7 @@
             <input
               type="text"
               name="server"
+              required
               id="server"
               v-model="task.serverName"
             />
