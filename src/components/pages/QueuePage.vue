@@ -1,33 +1,29 @@
 <template>
-  <div class="queue">
-    <h1>Current Tasks</h1>
-    <ul class="queue-list">
-      <tasking-entry
-        v-for="tasking in taskings"
-        :key="tasking.id"
-        :summary="tasking.summary"
-        :location="tasking.location"
-        :server="tasking.server"
-        :type="tasking.type"
-      />
-    </ul>
-    <button class="progress-button" v-on:click="this.openCreateWindow()">
-      Create Tasking
-    </button>
+  <div class="row">
+    <div class="queue">
+      <h1>Current Tasks</h1>
+      <ul class="queue-list">
+        <tasking-entry
+          v-for="tasking in taskings"
+          :key="tasking.id"
+          :summary="tasking.summary"
+          :location="tasking.location"
+          :server="tasking.server"
+          :type="tasking.type"
+        />
+      </ul>
+      <create-tasking></create-tasking>
+    </div>
   </div>
 </template>
 
 <script>
 import TaskingEntry from "../TaskingEntry.vue";
+import CreateTasking from "../CreateTasking.vue";
 
 export default {
-  components: { TaskingEntry },
+  components: { TaskingEntry, CreateTasking },
   name: "QueuePage",
-  methods: {
-    openCreateWindow() {
-      console.log("Create Tasking");
-    },
-  },
   data() {
     return {
       taskings: [

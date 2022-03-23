@@ -1,5 +1,5 @@
 <template>
-  <div class="tasking-entry">
+  <div class="card light-blue lighten-3 col s12">
     <h3>{{ type }}: {{ summary }}</h3>
     <div class="cells">
       <div class="info-cell">
@@ -38,14 +38,13 @@ export default {
 
 <style scoped>
 .tasking-entry {
-  background-color: #707070;
   width: 50%;
   margin-left: 25%;
   margin-bottom: 20px;
-  min-height: 65px;
-  max-height: 150px;
-  border-radius: 5px;
   padding: 10px 5px;
+  background-color: #light-blue lighten-3;
+  border-radius: 10px;
+  box-shadow: black;
 }
 
 h3 {
