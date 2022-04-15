@@ -20,29 +20,19 @@
 <script>
 import TaskingEntry from "../TaskingEntry.vue";
 import CreateTasking from "../CreateTasking.vue";
+import { getTaskings } from "../../backend/api-calls";
 
 export default {
   components: { TaskingEntry, CreateTasking },
   name: "QueuePage",
   data() {
     return {
-      taskings: [
-        {
-          id: 1,
-          summary: "Task 1",
-          location: "Gudauta",
-          server: "4YA",
-          type: "SEAD",
-        },
-        {
-          id: 2,
-          summary: "Task 2",
-          location: "MinVody",
-          server: "4YA",
-          type: "CAP",
-        },
-      ],
+      taskings: [],
     };
+  },
+  mounted() {
+    console.log("Queue page mounted");
+    getTaskings();
   },
 };
 </script>

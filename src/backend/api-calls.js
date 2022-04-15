@@ -1,12 +1,22 @@
+import conf from "../conf/conf";
+
 async function createTasking(taskingDetails) {
   console.debug(`Creating tasking ${JSON.stringify(taskingDetails)}...`);
-  if (process.env.PROFILE === "production") {
-    await fetch(`${process.env.BACKEND_ADDR}/taskings`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(taskingDetails),
-    });
-  }
+  await fetch(`${conf.backendAddress}/taskings`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(taskingDetails),
+  }); // TODO check for error response
 }
 
-export { createTasking };
+async function getTaskings() {
+  console.debug(`Getting taskings...`);
+  let taskings;
+  const response = await fetch(`${conf.backendAddress}/taskings`, {
+    method: "GET",
+  });
+  taskings = JSON.parse(response.json()); // TODO Check for error response
+  return taskings;
+}
+
+export { createTasking, getTaskings };
